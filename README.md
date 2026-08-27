@@ -138,7 +138,7 @@ If CognoDB is unreachable or credentials are missing, the application displays a
 
 ### Career Path
 
-![Career Path](screenshots/career path.png)
+![Career Path](screenshots/career-path.png)
 
 ### Home Page
 
