@@ -127,6 +127,19 @@ If CognoDB is unreachable or credentials are missing, the application displays a
 
 ## Screenshots
 
+
+### Home Page
+
+![SkillPath Home Page](screenshots/home.png)
+
+### Skill Exploration
+
+![Skill Exploration](screenshots/skill-exploration.png)
+
+### Career Path
+
+![Career Path](screenshots/career path.png)
+
 ### Home Page
 
 The home page provides access to Skill Exploration and Career Path features.
