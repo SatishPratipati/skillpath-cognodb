@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}SkillPath — Explore Connections{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="eyebrow">GRAPH-POWERED EXPLORATION</div>
+  <h1>See how your skills<br><em>connect to opportunity.</em></h1>
+  <p>Explore relationships between skills, technologies, projects and career roles using a graph database.</p>
+  <div class="actions">
+    <a class="button primary" href="/explore/?skill=Python">Explore Python</a>
+    <a class="button" href="/path/?start=Python&role=Data%20Engineer">Find a career path</a>
+  </div>
+</section>
+<section class="feature-grid">
+  <div class="feature"><b>Explore skills</b><span>Discover connected technologies, projects and roles.</span></div>
+  <div class="feature"><b>Find paths</b><span>Traverse the graph to connect a starting skill with a target role.</span></div>
+  <div class="feature"><b>Graph-native</b><span>Relationships are first-class data, not awkward join chains.</span></div>
+</section>
+{% endblock %}

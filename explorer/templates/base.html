@@ -1,0 +1,21 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}SkillPath{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="/">SkillPath<span>●</span></a>
+  <div class="navlinks">
+    <a href="/explore/">Explore</a>
+    <a href="/path/">Career Path</a>
+  </div>
+</nav>
+<main>{% block content %}{% endblock %}</main>
+<footer>Powered by CognoDB · Graph-powered exploration</footer>
+</body>
+</html>

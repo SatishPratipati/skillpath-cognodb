@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Career Path — SkillPath{% endblock %}
+{% block content %}
+<section class="page">
+  <div class="eyebrow">CAREER PATH</div>
+  <h1>Find a connected path</h1>
+  <form class="search two" method="get">
+    <input name="start" value="{{ start }}" placeholder="Starting skill e.g. Python">
+    <input name="role" value="{{ role }}" placeholder="Target role e.g. Data Engineer">
+    <button class="button primary">Find path</button>
+  </form>
+
+  {% if error %}
+    <div class="alert">{{ error }}</div>
+  {% elif start and role and not data %}
+    <div class="empty"><strong>No path found.</strong><br>Try Python → Data Engineer or Python → Backend Developer.</div>
+  {% elif data %}
+    <div class="pathbox">
+      <div class="pathmeta">{{ data.hops }} relationship{{ data.hops|pluralize }} traversed</div>
+      <div class="path">
+        {% for node in data.path %}
+          <div class="node">{{ node }}</div>
+          {% if not forloop.last %}<div class="arrow">→</div>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <div class="empty">Choose a starting skill and target role to traverse the graph.</div>
+  {% endif %}
+</section>
+{% endblock %}

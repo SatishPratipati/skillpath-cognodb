@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Explore a Skill — SkillPath{% endblock %}
+{% block content %}
+<section class="page">
+  <div class="eyebrow">EXPLORE</div>
+  <h1>Explore a skill</h1>
+  <form class="search" method="get">
+    <input name="skill" value="{{ skill }}" placeholder="Try Python, SQL, Django..." autofocus>
+    <button class="button primary">Explore</button>
+  </form>
+
+  {% if error %}
+    <div class="alert">{{ error }}</div>
+  {% elif skill and not data %}
+    <div class="empty"><strong>No skill found.</strong><br>Try Python, SQL, Django, Machine Learning or ETL.</div>
+  {% elif data %}
+    <div class="result-head"><span class="pill">Skill</span><h2>{{ data.skill }}</h2></div>
+    <div class="cards">
+      <div class="card"><small>RELATED SKILLS</small><div class="tags">{% for x in data.related_skills %}<span>{{ x }}</span>{% empty %}<i>None</i>{% endfor %}</div></div>
+      <div class="card"><small>TECHNOLOGIES</small><div class="tags">{% for x in data.technologies %}<span>{{ x }}</span>{% empty %}<i>None</i>{% endfor %}</div></div>
+      <div class="card"><small>PROJECTS</small><div class="tags">{% for x in data.projects %}<span>{{ x }}</span>{% empty %}<i>None</i>{% endfor %}</div></div>
+      <div class="card"><small>CAREER ROLES</small><div class="tags">{% for x in data.roles %}<span>{{ x }}</span>{% empty %}<i>None</i>{% endfor %}</div></div>
+    </div>
+  {% else %}
+    <div class="empty">Enter a skill above to explore its graph neighborhood.</div>
+  {% endif %}
+</section>
+{% endblock %}
